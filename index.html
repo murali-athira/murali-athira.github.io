@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited !</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥂</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+
+        .countdown-item span:first-child {
+            font-size: 2em;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .countdown-item .label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .countdown-container {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+            }
+
+            .countdown-item span:first-child {
+                font-size: 1.5em;
+            }
+        }
+
+        :root {
+            --primary-color: #c17767;
+            --secondary-color: #e6b387;
+            --background-color: #f5e6d3;
+            --hover-color: #a15747;
+            --card-background: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .save-the-date {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .couple-image {
+            width: 100%;
+            max-width: 350px;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .date-venue {
+            margin: 30px 0;
+            line-height: 1.6;
+        }
+
+        .details {
+            background: #f9f1ea;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .event {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff5eb;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-5px);
+        }
+
+        .event h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .directions-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .directions-link:hover {
+            background: var(--hover-color);
+        }
+
+        .separator {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .couple-names {
+                font-size: 36px;
+            }
+
+            .timeline {
+                flex-direction: column;
+            }
+
+            .event {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="save-the-date">Save the Date</div>
+            <div class="couple-names">Murali & Athira</div>
+
+            <img src="static/final.png" alt="Couple Image" class="couple-image">
+
+            <div class="date-venue">
+                <h2>Share in our joy as we unite in marriage</h2>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator">♥</div>
+
+            <div class="details">
+                <h3>Join us at</h3>
+                <div class="timeline">
+                    <div class="event">
+                        <h3>Wedding</h3>
+                        <p>May 23, 8:45 AM</p>
+                        <p>Palmleaves Beach Resort, Trivandrum</p>
+                        <a href="https://maps.app.goo.gl/uasGC6fRnpc6dCox5" target="_blank" class="directions-link">Get
+                            Directions</a>
+                    </div>
+                    <div class="event">
+                        <h3>Reception</h3>
+                        <p>May 26, 4:30 PM</p>
+                        <p>Anjoom Convention Centre, Balussery</p>
+                        <a href="https://maps.app.goo.gl/RnGsrPcMucd3SdLR7" target="_blank" class="directions-link">Get
+                            Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date('May 23, 2025 08:45:00').getTime();
+
+            function update() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    document.querySelector('.countdown-container').innerHTML = '<div class="special-message">The Big Day is Here! ♥</div>';
+                }
+            }
+
+            update();
+            const interval = setInterval(update, 1000);
+        }
+
+        updateCountdown();
+    </script>
+</body>
+
+</html>
